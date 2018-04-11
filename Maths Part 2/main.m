@@ -11,26 +11,30 @@
 #import "InputHandler.h"
 #import "ScoreKeeper.h"
 #import "QuestionManager.h"
+#import "QuestionFactory.h"
 
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
         
         BOOL gameOn = YES;
+        NSLog(@"Maths Game");
         ScoreKeeper *scoreKeeper = [[ScoreKeeper alloc]init];
-        QuestionManager *qM = [[QuestionManager alloc] init];
+        QuestionManager *qManager = [[QuestionManager alloc] init];
+        QuestionFactory *qFactory = [[QuestionFactory alloc] init];
         
         while (gameOn == YES) {
-            Question *aQ = [[Question alloc] init];
-            [qM.questions addObject:aQ]; // add each new question to the questions array in QuestionManager
+            Question *question = [qFactory generateRandomQuestion];
+
+            [qManager.questions addObject:question]; // add each new question to the questions array in QuestionManager
             
-            NSLog(@"%@", aQ.question);
+            NSLog(@"%@", question.question);
             NSString *result = [InputHandler getInput];
-            NSLog(@"My result is %@",result);
+            NSLog(@"My result is %@", result);
             
             if ([result isEqualToString:@"quit"]) {
                 gameOn = NO;
             }
-            else if (result.intValue == aQ.answer) {
+            else if (result.intValue == question.answer) {
                 NSLog(@"Right!");
                 scoreKeeper.right++;
             }
@@ -39,7 +43,7 @@ int main(int argc, const char * argv[]) {
                 scoreKeeper.wrong++;
             }
             NSLog(@"%@", [scoreKeeper getScore]);
-            NSLog(@"%@", [qM timeOutput]);
+            NSLog(@"%@", [qManager timeOutput]);
         }
         
     }
