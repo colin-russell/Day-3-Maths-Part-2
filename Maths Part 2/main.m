@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "AdditionQuestion.h"
+#import "Question.h"
 #import "InputHandler.h"
 #import "ScoreKeeper.h"
 #import "QuestionManager.h"
@@ -20,7 +20,7 @@ int main(int argc, const char * argv[]) {
         QuestionManager *qM = [[QuestionManager alloc] init];
         
         while (gameOn == YES) {
-            AdditionQuestion *aQ = [[AdditionQuestion alloc] init];
+            Question *aQ = [[Question alloc] init];
             [qM.questions addObject:aQ]; // add each new question to the questions array in QuestionManager
             
             NSLog(@"%@", aQ.question);

@@ -7,7 +7,7 @@
 //
 
 #import "QuestionManager.h"
-#import "AdditionQuestion.h"
+#import "Question.h"
 
 @implementation QuestionManager
 
@@ -24,7 +24,7 @@
 {
     NSInteger totalTime = 0;
     
-    for (AdditionQuestion *eachRound in self.questions) {
+    for (Question *eachRound in self.questions) {
         totalTime+=eachRound.answerTime;
     }
     NSInteger averageTime = totalTime/self.questions.count;
