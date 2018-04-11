@@ -10,31 +10,36 @@
 #import "AdditionQuestion.h"
 #import "InputHandler.h"
 #import "ScoreKeeper.h"
+#import "QuestionManager.h"
 
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
         
         BOOL gameOn = YES;
-        ScoreKeeper * sk = [[ScoreKeeper alloc]init];
+        ScoreKeeper *scoreKeeper = [[ScoreKeeper alloc]init];
+        QuestionManager *qM = [[QuestionManager alloc] init];
         
         while (gameOn == YES) {
-            AdditionQuestion *questionmark = [[AdditionQuestion alloc] init];
-            NSLog(@"%@", questionmark.question);
+            AdditionQuestion *aQ = [[AdditionQuestion alloc] init];
+            [qM.questions addObject:aQ]; // add each new question to the questions array in QuestionManager
+            
+            NSLog(@"%@", aQ.question);
             NSString *result = [InputHandler getInput];
             NSLog(@"My result is %@",result);
             
             if ([result isEqualToString:@"quit"]) {
                 gameOn = NO;
             }
-            else if (result.intValue == questionmark.answer) {
+            else if (result.intValue == aQ.answer) {
                 NSLog(@"Right!");
-                sk.right++;
+                scoreKeeper.right++;
             }
             else {
                 NSLog(@"Wrong!");
-                sk.wrong++;
+                scoreKeeper.wrong++;
             }
-            NSLog(@"%@", [sk getScore]);
+            NSLog(@"%@", [scoreKeeper getScore]);
+            NSLog(@"%@", [qM timeOutput]);
         }
         
     }

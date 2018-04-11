@@ -15,5 +15,6 @@
 @property NSDate *startTime;
 @property NSDate *endTime;
 
+-(NSTimeInterval)answerTime;
 
 @end

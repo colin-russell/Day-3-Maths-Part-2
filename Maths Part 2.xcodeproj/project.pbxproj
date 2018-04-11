@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3B5C11FE207E61430042A929 /* QuestionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B5C11FD207E61430042A929 /* QuestionManager.m */; };
 		3B815CD9207E33010072EE53 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B815CD8207E33010072EE53 /* main.m */; };
 		3B815CE1207E338C0072EE53 /* ScoreKeeper.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B815CE0207E338C0072EE53 /* ScoreKeeper.m */; };
 		3B815CE4207E33990072EE53 /* InputHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B815CE3207E33990072EE53 /* InputHandler.m */; };
@@ -26,6 +27,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		3B5C11FC207E61430042A929 /* QuestionManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QuestionManager.h; sourceTree = "<group>"; };
+		3B5C11FD207E61430042A929 /* QuestionManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QuestionManager.m; sourceTree = "<group>"; };
 		3B815CD5207E33010072EE53 /* Maths Part 2 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "Maths Part 2"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3B815CD8207E33010072EE53 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		3B815CDF207E338C0072EE53 /* ScoreKeeper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ScoreKeeper.h; sourceTree = "<group>"; };
@@ -73,6 +76,8 @@
 				3B815CE3207E33990072EE53 /* InputHandler.m */,
 				3B815CE5207E33A60072EE53 /* AdditionQuestion.h */,
 				3B815CE6207E33A60072EE53 /* AdditionQuestion.m */,
+				3B5C11FC207E61430042A929 /* QuestionManager.h */,
+				3B5C11FD207E61430042A929 /* QuestionManager.m */,
 			);
 			path = "Maths Part 2";
 			sourceTree = "<group>";
@@ -133,6 +138,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3B5C11FE207E61430042A929 /* QuestionManager.m in Sources */,
 				3B815CE1207E338C0072EE53 /* ScoreKeeper.m in Sources */,
 				3B815CE7207E33A60072EE53 /* AdditionQuestion.m in Sources */,
 				3B815CE4207E33990072EE53 /* InputHandler.m in Sources */,

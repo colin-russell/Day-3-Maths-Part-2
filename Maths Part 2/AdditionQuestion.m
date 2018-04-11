@@ -29,6 +29,10 @@
     _endTime = [NSDate date];
     return _answer;
 }
-    
+
+-(NSTimeInterval)answerTime
+{
+    return [self.endTime timeIntervalSinceDate:self.startTime]; // probably need to ROUND somehow
+}
 
 @end
